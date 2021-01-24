@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 async function monitorStatus(id) {
- return axios.post('http://localhost:8080/user/trackId', {
+ return axios.post('http://localhost:8080/customer/trackId', {
     ...id
  })
    .then(res => res.data)
@@ -11,12 +11,13 @@ async function monitorStatus(id) {
 
 export default function CarStatus() {
     const [trackId, setTrackId] = useState();
-    
+
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await monitorStatus({
+        const track_info = await monitorStatus({
             trackId
         });
+        console.log(track_info[0].model);
       }
 
   return(

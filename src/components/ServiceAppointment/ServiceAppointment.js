@@ -1,7 +1,13 @@
 
 import React, { useState } from 'react';
-// import { Redirect } from "react-router-dom"; 
+import axios from 'axios';
 
+async function requestService(info) {
+ return axios.post('http://localhost:8080/customer/requestService', {
+    ...info
+ })
+   .then(res => res.data)
+}
 export default function ServiceAppointment() {
     const [name, setName] = useState();
     const [surname, setSurname] = useState();
@@ -9,6 +15,7 @@ export default function ServiceAppointment() {
     const [email, setEmail] = useState();
     const [plateNumber, setPlateNumber] = useState();
     const [date, setDate] = useState();
+    const [carModel, setCarModel] = useState();
     const [showroom, setShowroom] = useState();
     const [maintenance, setMaintenance] = useState();
     const [faultWarning, setFaultWarning] = useState();
@@ -16,16 +23,22 @@ export default function ServiceAppointment() {
   
     const handleSubmit = async e => {
       e.preventDefault();
-      console.log(name);
-      console.log(surname);
-      console.log(phone);
-      console.log(email);
-      console.log(plateNumber);
-      console.log(date);
-      console.log(showroom);
-      console.log(maintenance);
-      console.log(faultWarning);
-      console.log(accessoryAssembly);
+      const app_info = await requestService({
+        name,
+        surname,
+        phone,
+        email,
+        plateNumber,
+        date,
+        showroom,
+        maintenance,
+        faultWarning,
+        accessoryAssembly,
+        carModel,
+        "reservationType": "service",
+        "reservationStatus": "unassigned",
+      });
+      console.log(app_info);
     }
   
     return(
@@ -75,7 +88,18 @@ export default function ServiceAppointment() {
             </label>
           </div>
 
-          
+          <div>
+            <label>
+            <span>Car model:  </span>
+              <select required defaultValue={'DEFAULT'} onChange={e => setCarModel(e.target.value)}>
+                <option value="DEFAULT" disabled>Choose car model ...</option>
+                <option value="lion">Lion</option>
+                <option value="elephant">Elephant</option>
+                <option value="cat">Cat</option>
+              </select>
+            </label>
+          </div>
+
           <div>
             <label>
             <span>Showroom:  </span>

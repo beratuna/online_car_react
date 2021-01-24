@@ -1,7 +1,12 @@
-
 import React, { useState } from 'react';
-// import { Redirect } from "react-router-dom"; 
+import axios from 'axios';
 
+async function requestPrice(info) {
+ return axios.post('http://localhost:8080/customer/requestPrice', {
+    ...info
+ })
+   .then(res => res.data)
+}
 export default function PriceOffer() {
     const [name, setName] = useState();
     const [surname, setSurname] = useState();
@@ -15,15 +20,20 @@ export default function PriceOffer() {
   
     const handleSubmit = async e => {
       e.preventDefault();
-      console.log(name);
-      console.log(surname);
-      console.log(phone);
-      console.log(email);
-      console.log(minPrice);
-      console.log(maxPrice);
-      console.log(carModel);
-      console.log(city);
-      console.log(zoomOption);
+      const app_info = await requestPrice({
+        name,
+        surname,
+        phone,
+        email,
+        minPrice,
+        maxPrice,
+        carModel,
+        city,
+        zoomOption,
+        "reservationType": "priceOffering",
+        "reservationStatus": "unassigned",
+      });
+      console.log(app_info);
     }
   
     return(
