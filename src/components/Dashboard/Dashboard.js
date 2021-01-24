@@ -6,23 +6,40 @@ export default function Dashboard() {
   return(
     <div>
         <h2>Dashboard</h2>
-        <div class="col-xs-3">
-            <Link to="/roadside"><button class='btn btn-success'>
+        <div class="flex-container">
+            <div class="col-xs-4 m-r-10">            
+                <Link to="/roadside"><button class='btn btn-success btn-lg'>
                 Roadside Assistance
-            </button>&nbsp;&nbsp;&nbsp; 
-            </Link>
-            <Link to="/showroom"><button class='btn btn-success'>
+                </button>
+                </Link>
+            </div>
+            <div class="col-xs-4 m-r-10">
+            <Link to="/showroom"><button class='btn btn-success btn-lg'>
                 Nearest Showrooms
-            </button>&nbsp;&nbsp;&nbsp; 
+            </button>
             </Link>
-            <Link to="/reservation"><button class='btn btn-success'>
-                Request Reservation
-            </button>&nbsp;&nbsp;&nbsp; 
+            </div>
+            
+            <div class="col-xs-4 m-r-10">
+            <Link to="/serviceAppointment"><button class='btn btn-success btn-lg'>
+                Service Appointment
+            </button>
             </Link>
-            <Link to="/carStatus"><button class='btn btn-success'>
+            </div>
+
+            <div class="col-xs-4 m-r-10">
+            <Link to="/priceOffer"><button class='btn btn-success btn-lg'>
+                Price Offering
+            </button>
+            </Link>
+            </div>
+
+            <div class="col-xs-4">
+            <Link to="/carStatus"><button class='btn btn-success btn-lg'>
                 Monitor Car Status
             </button>
             </Link>
+            </div>
         </div>
     </div>
   );

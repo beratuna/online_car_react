@@ -13,7 +13,8 @@ import Dashboard from './components/Dashboard/Dashboard';
 import CarStatus from './components/CarStatus/CarStatus';
 import Roadside from './components/Roadside/Roadside';
 import Showroom from './components/Showroom/Showroom';
-import Reservation from './components/Reservation/Reservation';
+import PriceOffer from './components/PriceOffer/PriceOffer';
+import ServiceAppointment from './components/ServiceAppointment/ServiceAppointment';
 import useToken from './useToken';
 
 const ComponentWithLoading = withLoading(Col);
@@ -64,10 +65,14 @@ const App = () => {
           </Route>  
           <Route path="/showroom" >
             <Showroom/>
-          </Route>          
-          <Route path="/reservation" >
-            <Reservation/>
-          </Route>          
+          </Route>        
+          <Route path="/serviceAppointment" >
+            <ServiceAppointment/>
+          </Route>   
+          <Route path="/priceOffer" >
+            <PriceOffer/>
+          </Route>   
+         
         </Switch>
       </BrowserRouter>
     </div>
