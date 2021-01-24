@@ -32,7 +32,12 @@ const App = () => {
         <Link to="/personnel"><button class='btn btn-success float-right'>
             Personnel Login
           </button>
+        </Link>        
+        <Link to="/dashboard"><button class='btn btn-success float-left'>
+            Home
+          </button>
         </Link>
+
         </div>
         <Redirect from="/" to="/dashboard" />
         <Switch>
