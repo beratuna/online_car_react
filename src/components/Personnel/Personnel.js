@@ -7,13 +7,13 @@ export default function Personnel({token, setToken}) {
   if(!token) {
     return <Login setToken={setToken} />
   }
-  console.log(token.usertype);
-  if(token.usertype == "receptionist"){
+  else if(token.usertype == "receptionist"){
     return <Redirect to='/receptionist'/>
   }
   else if(token.usertype == "manager"){
     return <Redirect to='/manager'/>
   }
+  console.log(token);
   return(
     <h2>Personnel</h2>
   );

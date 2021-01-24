@@ -23,7 +23,7 @@ export default function Login({ setToken }) {
       usertype
     });
     setToken(token);
-    // console.log(usertype);
+    console.log(token);
   }
 
   return(
