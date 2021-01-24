@@ -29,52 +29,58 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <BrowserRouter>
-        <div class="col-xs-3">
-        <Link to="/personnel"><button class='btn btn-success float-right'>
-            Personnel Login
-          </button>
-        </Link>        
-        <Link to="/dashboard"><button class='btn btn-success float-left'>
-            Home
-          </button>
-        </Link>
+      <div class="flex-container justify-content-space-between flex-direction-row">
+        <div>        
+          <Link to="/dashboard"><button class='btn btn-success'>
+              Home
+            </button>
+          </Link>
+        </div>     
+        <div class="width-80"> 
+          <Redirect from="/" to="/dashboard" />
+          <Switch>
+            <Route path="/dashboard" >
+              <Dashboard/>
+            </Route>
+            <Route path="/personnel" >
+              <Personnel token={token} setToken={setToken}/>
+            </Route>
+            <Route path="/login" >
+              <Login setToken={setToken} />
+            </Route>
+            <Route path="/receptionist" >
+              <Receptionist token={token} setToken={setToken}/>
+            </Route>
+            <Route path="/manager" >
+              <Manager token={token} setToken={setToken}/>
+            </Route>
+            <Route path="/carStatus" >
+              <CarStatus/>
+            </Route>
+            <Route path="/roadside" >
+              <Roadside/>
+            </Route>  
+            <Route path="/showroom" >
+              <Showroom/>
+            </Route>        
+            <Route path="/serviceAppointment" >
+              <ServiceAppointment/>
+            </Route>   
+            <Route path="/priceOffer" >
+              <PriceOffer/>
+            </Route>   
+            </Switch>
+          </div>
 
+        <div>
+          <Link to="/personnel"><button class='btn btn-success'>
+              Personnel Login
+            </button>
+          </Link>
         </div>
-        <Redirect from="/" to="/dashboard" />
-        <Switch>
-          <Route path="/dashboard" >
-            <Dashboard/>
-          </Route>
-          <Route path="/personnel" >
-            <Personnel token={token} setToken={setToken}/>
-          </Route>
-          <Route path="/login" >
-            <Login setToken={setToken} />
-          </Route>
-          <Route path="/receptionist" >
-            <Receptionist token={token} setToken={setToken}/>
-          </Route>
-          <Route path="/manager" >
-            <Manager token={token} setToken={setToken}/>
-          </Route>
-          <Route path="/carStatus" >
-            <CarStatus/>
-          </Route>
-          <Route path="/roadside" >
-            <Roadside/>
-          </Route>  
-          <Route path="/showroom" >
-            <Showroom/>
-          </Route>        
-          <Route path="/serviceAppointment" >
-            <ServiceAppointment/>
-          </Route>   
-          <Route path="/priceOffer" >
-            <PriceOffer/>
-          </Route>   
-         
-        </Switch>
+      </div>
       </BrowserRouter>
+
     </div>
   );
 };

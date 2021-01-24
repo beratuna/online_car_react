@@ -13,17 +13,88 @@ code {
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: flex;  
   align-content: center;
+}
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.h-300 {
   height: 300px;
 }
 .m-r-10{ 
   margin-right: 10px;
 }
+.m-t-7{ 
+  margin-top: 7px;
+}
+.m-t-5{ 
+  margin-top: 5px;
+}
+.m-t-18{ 
+  margin-top: -18px;
+}
+.width-80{
+  width: 80%;
+}
+.width-57{
+  width: 57%;
+}
 
-.titleWrap{
+.width-50{
+  width: 50%;
+}
+
+.width-60{
+  width: 60%;
+}
+
+.column{
+  width:100%;
   display:inline-block;
+}
+
+.theLabels{
+  width:30%;
+}
+.theInputs{
+  width:60%;
+  float:right;
+}
+
+.float-left {
+  float: left;
+}
+
+.blink {
+  animation: blinker 2.0s linear infinite;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+  }
+  @keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+.font-20 {
+  font-size: 25px;
+  font-weight: bold;
 }

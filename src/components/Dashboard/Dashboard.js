@@ -6,7 +6,7 @@ export default function Dashboard() {
   return(
     <div>
         <h2>Dashboard</h2>
-        <div class="flex-container">
+        <div class="flex-container h-300 align-items-center justify-content-center flex-direction-row">
             <div class="col-xs-4 m-r-10">            
                 <Link to="/roadside"><button class='btn btn-success btn-lg'>
                 Roadside Assistance
@@ -19,7 +19,7 @@ export default function Dashboard() {
             </button>
             </Link>
             </div>
-            
+
             <div class="col-xs-4 m-r-10">
             <Link to="/serviceAppointment"><button class='btn btn-success btn-lg'>
                 Service Appointment
