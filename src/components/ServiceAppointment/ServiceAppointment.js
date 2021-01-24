@@ -88,34 +88,27 @@ export default function ServiceAppointment() {
             </label>
           </div>
 
-<<<<<<< HEAD
-          <div>
-            <label>
-            <span>Car model:  </span>
-              <select required defaultValue={'DEFAULT'} onChange={e => setCarModel(e.target.value)}>
-                <option value="DEFAULT" disabled>Choose car model ...</option>
-                <option value="lion">Lion</option>
-                <option value="elephant">Elephant</option>
-                <option value="cat">Cat</option>
-              </select>
-            </label>
-          </div>
-
-          <div>
-            <label>
-            <span>Showroom:  </span>
-              <select required defaultValue={'DEFAULT'} onChange={e => setShowroom(e.target.value)}>
-=======
           
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Showroom:  </span>
               <select class="theInputs" required defaultValue={'DEFAULT'} onChange={e => setShowroom(e.target.value)}>
->>>>>>> 5886129c2dd96904397a5d9ba899ff2730c5fd6d
                 <option value="DEFAULT" disabled>Choose city ...</option>
                 <option value="ankara">Ankara</option>
                 <option value="istanbul">İstanbul</option>
                 <option value="izmir">İzmir</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="column">
+            <label class="theLabels">
+            <span  class="float-left">Car model:  </span>
+              <select class="theInputs" required defaultValue={'DEFAULT'} onChange={e => setCarModel(e.target.value)}>
+                <option value="DEFAULT" disabled>Choose car model ...</option>
+                <option value="lion">Lion</option>
+                <option value="elephant">Elephant</option>
+                <option value="cat">Cat</option>
               </select>
             </label>
           </div>
