@@ -30,56 +30,56 @@ export default function ServiceAppointment() {
   
     return(
       <div>
-        <h1>Service Appointment</h1>
+        <h2>Service Appointment</h2>
         <form onSubmit={handleSubmit}>
 
-          <div>
-            <label>
-              <span>Name: </span>
-              <input type="text" required onChange={e => setName(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+              <span class="float-left">Name: </span>
+              <input class="theInputs" type="text" required onChange={e => setName(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Surname: </span>
-              <input type="text" required onChange={e => setSurname(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Surname: </span>
+              <input class="theInputs" type="text" required onChange={e => setSurname(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Phone: </span>
-              <input type="number" required onChange={e => setPhone(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Phone: </span>
+              <input class="theInputs" type="number" required onChange={e => setPhone(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Email: </span>
-              <input type="text" onChange={e => setEmail(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Email: </span>
+              <input class="theInputs" type="text" onChange={e => setEmail(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Plate Number: </span>
-              <input type="text"  onChange={e => setPlateNumber(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Plate Number: </span>
+              <input class="theInputs" type="text"  onChange={e => setPlateNumber(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Date:  </span>
-                <input type="date"  onChange={e => setDate(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Date:  </span>
+                <input class="theInputs" type="date"  onChange={e => setDate(e.target.value)} />
             </label>
           </div>
 
           
-          <div>
-            <label>
-            <span>Showroom:  </span>
-              <select required defaultValue={'DEFAULT'} onChange={e => setShowroom(e.target.value)}>
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Showroom:  </span>
+              <select class="theInputs" required defaultValue={'DEFAULT'} onChange={e => setShowroom(e.target.value)}>
                 <option value="DEFAULT" disabled>Choose city ...</option>
                 <option value="ankara">Ankara</option>
                 <option value="istanbul">İstanbul</option>
@@ -88,30 +88,30 @@ export default function ServiceAppointment() {
             </label>
           </div>
           
-          <div>
-            <label>
-            <span>Maintenance: </span>
-              <input type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Maintenance: </span>
+              <input class="theInputs m-t-7" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
             </label>
           </div>
           
-          <div>
-            <label>
-            <span>Fault Warning: </span>
-              <input type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Fault Warning: </span>
+              <input class="theInputs m-t-4" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
             </label>
           </div>
 
 
-          <div>
-            <label>
-            <span>Accessory Assembly: </span>
-              <input type="checkbox" onChange={e => setAccessoryAssembly(e.target.checked)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Accessory Assembly: </span>
+              <input class="theInputs m-t-18" type="checkbox" onChange={e => setAccessoryAssembly(e.target.checked)} />
             </label>
           </div>
 
-          <div>
-            <button type="submit">Submit</button>
+          <div class="column">
+            <button type="submit" class="btn btn-info btn-sm">Submit</button>
           </div>
         </form>
       </div>

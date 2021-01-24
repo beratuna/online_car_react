@@ -28,49 +28,51 @@ export default function PriceOffer() {
   
     return(
       <div>
-        <h1>Price Offering</h1>
+        <h2>Price Offering</h2>
         <form onSubmit={handleSubmit}>
 
-          <div>
-            <label>
-              <span>Name: </span>
-              <input type="text" required onChange={e => setName(e.target.value)} />
+        <div class="column">
+            <label class="theLabels">
+              <span class="float-left">Name: </span>
+              <input class="theInputs" type="text" required onChange={e => setName(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Surname: </span>
-              <input type="text" required onChange={e => setSurname(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Surname: </span>
+              <input class="theInputs" type="text" required onChange={e => setSurname(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Phone: </span>
-              <input type="number" required onChange={e => setPhone(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Phone: </span>
+              <input class="theInputs" type="number" required onChange={e => setPhone(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Email: </span>
-              <input type="text" onChange={e => setEmail(e.target.value)} />
+          <div class="column">
+            <label class="theLabels">
+            <span class="float-left">Email: </span>
+              <input class="theInputs" type="text" onChange={e => setEmail(e.target.value)} />
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Price Interval: </span>
+          <div class="column">
+            <label class="theLabels">
+            <span  class="float-left">Price Interval: </span>
+            <div class="theInputs">
               <input type="number" class="m-r-10" placeholder="Min" onChange={e => setMinPrice(e.target.value)} />
-              <input type="number" placeholder="Max" onChange={e => setMaxPrice(e.target.value)} />
+              <input type="number"  class="m-t-7" placeholder="Max" onChange={e => setMaxPrice(e.target.value)} />
+              </div>
             </label>
           </div>
 
-          <div>
-            <label>
-            <span>Car model:  </span>
-              <select required defaultValue={'DEFAULT'} onChange={e => setCarModel(e.target.value)}>
+          <div class="column">
+            <label class="theLabels">
+            <span  class="float-left">Car model:  </span>
+              <select class="theInputs" required defaultValue={'DEFAULT'} onChange={e => setCarModel(e.target.value)}>
                 <option value="DEFAULT" disabled>Choose car model ...</option>
                 <option value="lion">Lion</option>
                 <option value="elephant">Elephant</option>
@@ -80,10 +82,10 @@ export default function PriceOffer() {
           </div>
 
           
-          <div>
-            <label>
-            <span>City:  </span>
-              <select required defaultValue={'DEFAULT'} onChange={e => setCity(e.target.value)}>
+          <div class="column">
+            <label class="theLabels">
+            <span  class="float-left">City:  </span>
+              <select class="theInputs" required defaultValue={'DEFAULT'} onChange={e => setCity(e.target.value)}>
                 <option value="DEFAULT" disabled>Choose city ...</option>
                 <option value="ankara">Ankara</option>
                 <option value="istanbul">İstanbul</option>
@@ -92,15 +94,15 @@ export default function PriceOffer() {
             </label>
           </div>
           
-          <div>
-            <label>
-            <span>Zoom option: </span>
-              <input type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
+          <div class="column">
+            <label class="theLabels">
+            <span  class="float-left">Zoom option: </span>
+              <input class="theInputs m-t-7" type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
             </label>
           </div>
 
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-info btn-sm">Submit</button>
           </div>
         </form>
       </div>
