@@ -2,7 +2,7 @@ import React from 'react';
 import Login from '../Login/Login';
 import { Redirect } from "react-router-dom"; 
 
-export default function Personnel({token, setToken, usertype, setUserType}) {
+export default function Personnel({token, setToken}) {
 
   if(!token) {
     return <Login setToken={setToken} />
