@@ -36,6 +36,12 @@ code {
   justify-content: space-between;
 }
 
+.div-border{
+  width: 50%;
+  border: 2px solid green;
+  border-radius: 25px;
+}
+
 .h-300 {
   height: 300px;
 }
