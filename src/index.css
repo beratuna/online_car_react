@@ -54,6 +54,10 @@ code {
 .m-t-5{ 
   margin-top: 5px;
 }
+
+.m-l-5{ 
+  margin-left: 5px;
+}
 .m-t-18{ 
   margin-top: -18px;
 }
@@ -88,8 +92,12 @@ code {
   width:30%;
 }
 .theInputs{
-  width:60%;
+  width:78%;
   float:right;
+}
+
+.width-100 {
+  width: 100%;
 }
 
 .float-left {
@@ -110,4 +118,8 @@ code {
 .font-20 {
   font-size: 25px;
   font-weight: bold;
+}
+
+.font-25 {
+  font-size: 25px;
 }

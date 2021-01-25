@@ -20,48 +20,33 @@ export default function Showroom() {
       <div>
         <div>
           {showroom == 'ankara' &&
-            <div class="flex-container flex-direction-row align-items-center">
-              <div class="div-border m-r-10">
+            <div class="flex-container flex-direction-row align-items-center justify-content-center">
+              <div class="div-border m-r-10 font-25">
                 <p><b>Showroom X</b></p>
-                <p>Adress:</p>
-                <p>Phone:</p>
-              </div>
-              <div class="div-border m-r-10">
-                <p><b>Showroom Y</b></p>
-                <p>Adress:</p>
-                <p>Phone:</p>
-              </div>
-              <div class="div-border">
-              <p><b>Showroom Z</b></p>
-                <p>Adress: </p>
-                <p>Phone:</p>
+                <p><b>Adress:</b> Kızılırmak, Mevlana Blv. No:148/A, 06520 Çankaya/Ankara</p>
+                <p><b>Phone:</b> (0312) 378 38 38</p>
               </div>
             </div>           
           }
         </div>
         <div>
           {showroom == 'istanbul' &&
-            <div class="flex-container flex-direction-row align-items-center">
-            <div class="div-border m-r-10">
-              <p><b>Showroom A</b></p>
-              <p>Adress: </p>
-              <p>Phone: </p>
-            </div>
-            <div class="div-border m-r-10">
-              <p><b>Showroom B</b></p>
-              <p>Adress: </p>
-              <p>Phone:</p>
+            <div class="flex-container flex-direction-row align-items-center justify-content-center">
+            <div class="div-border m-r-10 font-25">
+              <p><b>Showroom Y</b></p>
+              <p><b>Adress:</b> Maltepe, Eski Londra Asfaltı Cd. No:1, 34010 Zeytinburnu/İstanbul</p>
+              <p><b>Phone:</b> (0212) 449 13 33</p>
             </div>
           </div>    
           }
         </div>
         <div>
           {showroom == 'izmir' &&
-            <div class="flex-container  align-items-center">
-            <div class="div-border m-r-10">
-              <p><b>Showroom C</b></p>
-              <p>Adress: </p>
-              <p>Phone:</p>
+            <div class="flex-container flex-direction-row align-items-center justify-content-center">
+            <div class="div-border m-r-10 font-25">
+              <p><b>Showroom Z</b></p>
+              <p><b>Adress:</b> Adalet, Anadolu Cd. No:29, 35530 Bayraklı/İzmir</p>
+              <p><b>Phone:</b> (0232) 498 88 00</p>
             </div>
           </div>  
           }

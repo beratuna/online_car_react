@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 async function requestService(info) {
  return axios.post(process.env.REACT_APP_backend_url + 'customer/requestService', {
     ...info
@@ -21,7 +24,7 @@ export default function ServiceAppointment() {
     const [maintenance, setMaintenance] = useState();
     const [faultWarning, setFaultWarning] = useState();
     const [accessoryAssembly, setAccessoryAssembly] = useState();
-  
+    const [appInfo, setAppInfo] = useState();
     const handleSubmit = async e => {
       e.preventDefault();
       const app_info = await requestService({
@@ -39,16 +42,18 @@ export default function ServiceAppointment() {
         "reservationType": "service",
         "reservationStatus": "unassigned",
       });
-      console.log(app_info);
+      setAppInfo(app_info);
+      console.log(appInfo);
       
     }
   
     return(
       <div>
         <h2>Service Appointment</h2>
-        <div id="root"></div>
-        <form onSubmit={handleSubmit}>
 
+        <div id="root"></div>
+        
+        <form onSubmit={handleSubmit}>
           <div class="column">
             <label class="theLabels">
               <span class="float-left">Name: </span>
@@ -119,14 +124,14 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Maintenance: </span>
-              <input class="theInputs m-t-7" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
+              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
             </label>
           </div>
           
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Fault Warning: </span>
-              <input class="theInputs m-t-5" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
+              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
             </label>
           </div>
 
@@ -134,13 +139,16 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Accessory Assembly: </span>
-              <input class="theInputs m-t-18" type="checkbox" onChange={e => setAccessoryAssembly(e.target.checked)} />
+              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setAccessoryAssembly(e.target.checked)} />
             </label>
           </div>
 
-          <div class="column">
-            <button type="submit" class="btn btn-info btn-sm">Submit</button>
-          </div>
+
+          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || !showroom || !carModel}>Submit</button>} modal>
+            {appInfo == null && <span>Appointment is creating. Please wait... </span>}
+            {appInfo == true && <span>Appointment is created successfully.</span>}
+            {appInfo == false && <span>Appointment cannot cretaed. Failed.</span>}
+          </Popup>
         </form>
       </div>
     )
