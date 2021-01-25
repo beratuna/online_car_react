@@ -41,6 +41,17 @@ export default function Dashboard() {
             </Link>
             </div>
         </div>
+        <div class="flex-container"> 
+            <div class="width-50">
+                <img class="width-80" src={require('./cat.jpg')} />
+            </div>
+            <div class="width-50 m-t-5">
+                <img class="width-90" src={require('./lion.jpg')} />
+            </div>
+            <div class="width-50 m-t-6">
+                 <img class="width-80" src={require('./elephant.png')} />
+            </div>
+        </div>
     </div>
   );
 }

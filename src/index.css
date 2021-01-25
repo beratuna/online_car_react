@@ -51,8 +51,15 @@ code {
 .m-t-18{ 
   margin-top: -18px;
 }
+
+.m-t-6{ 
+  margin-top: -6px;
+}
 .width-80{
   width: 80%;
+}
+.width-90{
+  width: 90%;
 }
 .width-57{
   width: 57%;

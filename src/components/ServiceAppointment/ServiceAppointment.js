@@ -123,7 +123,7 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Fault Warning: </span>
-              <input class="theInputs m-t-4" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
+              <input class="theInputs m-t-5" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
             </label>
           </div>
 
