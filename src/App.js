@@ -32,7 +32,11 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div>
+          <h2 class="text-align: left">Online Car Sales and Services</h2> 
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+
       </header>
       <BrowserRouter>
       <div class="flex-container justify-content-space-between flex-direction-row">

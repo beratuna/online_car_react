@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from '../Login/Login';
 import axios from 'axios';
+import MaterialTable from 'material-table'
 
 async function managerInfo(info) {
  return axios.post(process.env.REACT_APP_backend_url + 'user/managerInfo', {
@@ -12,7 +13,8 @@ async function managerInfo(info) {
 export default function Manager({token, setToken}) {
   const [city, setCity] = useState();
   const [employeeType, setEmployeeType] = useState();
-  console.log(token);
+  const [data, setData] = useState();
+
   if(!token) {
     return <Login setToken={setToken} />
   }
@@ -23,7 +25,14 @@ export default function Manager({token, setToken}) {
       city,
       employeeType
     });
+    var bigData = [];
     console.log(man_info);
+    for(let i = 0; i<man_info.length; i++){
+      bigData.push(man_info[i]);
+    }
+  setData(bigData);
+
+
   }
 
   return(
@@ -59,6 +68,23 @@ export default function Manager({token, setToken}) {
           <button type="submit" class="btn btn-info btn-sm">Submit</button>
         </div>
       </form>
+
+      <div style={{ maxWidth: '100%' }}>
+        <MaterialTable
+          columns={[
+            { title: 'Name', field: 'name' },
+            { title: 'Surname', field: 'surname' },
+            { title: 'Email', field: 'email' },
+            { title: 'phone', field: 'phone' },
+            { title: 'Monthly Sales', field: 'monthlySales'},
+            { title: 'Total Sales', field: 'totalSales'}
+          ]}
+        //   data={[{ name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 }]}
+          data = {data}
+          title="Employee Information"
+        />
+      </div>
+
       </div>
     </div>
   );
