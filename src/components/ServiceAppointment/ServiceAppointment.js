@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import ReactDOM from 'react-dom';
 
 async function requestService(info) {
  return axios.post(process.env.REACT_APP_backend_url + 'customer/requestService', {
@@ -39,11 +40,13 @@ export default function ServiceAppointment() {
         "reservationStatus": "unassigned",
       });
       console.log(app_info);
+      
     }
   
     return(
       <div>
         <h2>Service Appointment</h2>
+        <div id="root"></div>
         <form onSubmit={handleSubmit}>
 
           <div class="column">
