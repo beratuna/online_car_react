@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import logo from './assets/logo.svg';
 import './App.css';
-import Form from './components/Form';
 import withLoading from './hoc/withLoading';
 import { Col } from 'react-bootstrap';
 import Personnel from './components/Personnel/Personnel';
@@ -22,6 +21,13 @@ const ComponentWithLoading = withLoading(Col);
 const App = () => {
   // const [token, setToken] = useState();
   const { token, setToken } = useToken();
+
+  const logoutRequest = useCallback(async () =>{
+    sessionStorage.clear();
+    console.log("logoiut");
+    window.location.reload(false);
+
+  })
   
   return (
     <div className="App">
@@ -73,10 +79,19 @@ const App = () => {
           </div>
 
         <div>
-          <Link to="/personnel"><button class='btn btn-success'>
-              Personnel Login
-            </button>
-          </Link>
+          <div>
+            <Link to="/personnel"><button class='btn btn-success'>
+                Personnel Login
+              </button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/dashboard"><button class='btn btn-success' onClick={logoutRequest}>
+                Personnel Logout
+              </button>
+            </Link>
+          </div>
+          
         </div>
       </div>
       </BrowserRouter>

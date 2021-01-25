@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 async function monitorStatus(id) {
- return axios.post('http://localhost:8080/customer/trackId', {
+ return axios.post(process.env.REACT_APP_backend_url + 'customer/trackId', {
     ...id
  })
    .then(res => res.data)

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 async function requestService(info) {
- return axios.post('http://localhost:8080/customer/requestService', {
+ return axios.post(process.env.REACT_APP_backend_url + 'customer/requestService', {
     ...info
  })
    .then(res => res.data)
@@ -112,7 +112,7 @@ export default function ServiceAppointment() {
               </select>
             </label>
           </div>
-          
+
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Maintenance: </span>

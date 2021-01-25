@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 async function requestPrice(info) {
- return axios.post('http://localhost:8080/customer/requestPrice', {
+ return axios.post(process.env.REACT_APP_backend_url + 'customer/requestPrice', {
     ...info
  })
    .then(res => res.data)
 }
+
 export default function PriceOffer() {
     const [name, setName] = useState();
     const [surname, setSurname] = useState();
@@ -90,7 +91,6 @@ export default function PriceOffer() {
               </select>
             </label>
           </div>
-
           
           <div class="column">
             <label class="theLabels">

@@ -4,7 +4,7 @@ import './Login.css';
 import axios from 'axios';
 
 async function loginUser(credentials) {
- return axios.post('http://localhost:8080/user/login', {
+ return axios.post(process.env.REACT_APP_backend_url + 'user/login', {
     ...credentials
  })
    .then(res => res.data)
