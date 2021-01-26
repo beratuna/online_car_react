@@ -131,3 +131,7 @@ code {
 .auto-height {
   height: auto;
 }
+
+.font-color-red {
+  color: red;
+}

@@ -46,6 +46,10 @@ export default function ServiceAppointment() {
       console.log(appInfo);
       
     }
+    var today = new Date().toISOString().slice(0, 10)
+    if(date < today){
+      console.log("tadaaa");
+    }
   
     return(
       <div>
@@ -92,7 +96,10 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Date:  </span>
-                <input class="theInputs" type="date"  onChange={e => setDate(e.target.value)} />
+                <div class="theInputs">
+                  <input  type="date" class="m-r-10 width-100" onChange={e => setDate(e.target.value)} />
+                  {date < today && <span class="font-color-red">Selected date must be minimum today.</span>}
+                </div>
             </label>
           </div>
 
@@ -144,7 +151,7 @@ export default function ServiceAppointment() {
           </div>
 
 
-          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || !showroom || !carModel}>Submit</button>} modal>
+          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || date < today || !showroom || !carModel}>Submit</button>} modal>
             {appInfo == null && <span>Appointment is creating. Please wait... </span>}
             {appInfo == true && <span>Appointment is created successfully.</span>}
             {appInfo == false && <span>Appointment cannot cretaed. Failed.</span>}
