@@ -84,14 +84,16 @@ const App = () => {
           </div>
 
         <div>
+        {!token &&
           <div>
             <Link to="/personnel"><button class='btn btn-success'>
                 Personnel Login
               </button>
             </Link>
           </div>
+          }
           {token &&
-          <div class="m-t-5">
+          <div>
             <Link to="/dashboard"><button class='btn btn-success' onClick={logoutRequest}>
                 Personnel Logout
               </button>

@@ -128,14 +128,14 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Maintenance: </span>
-              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
+              <input class="m-t-5 m-l-38  float-left" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
             </label>
           </div>
           
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Fault Warning: </span>
-              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
+              <input class="m-t-5 m-l-35  float-left" type="checkbox" onChange={e => setFaultWarning(e.target.checked)} />
             </label>
           </div>
 

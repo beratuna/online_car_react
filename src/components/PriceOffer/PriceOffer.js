@@ -111,7 +111,7 @@ export default function PriceOffer() {
           <div class="column">
             <label class="theLabels">
             <span  class="float-left">Zoom option: </span>
-              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
+              <input class="m-t-5 m-l-38 float-left" type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
             </label>
           </div>
 
