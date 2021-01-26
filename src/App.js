@@ -90,13 +90,14 @@ const App = () => {
               </button>
             </Link>
           </div>
-          <div>
+          {token &&
+          <div class="m-t-5">
             <Link to="/dashboard"><button class='btn btn-success' onClick={logoutRequest}>
                 Personnel Logout
               </button>
             </Link>
           </div>
-          
+          }
         </div>
       </div>
       </BrowserRouter>
