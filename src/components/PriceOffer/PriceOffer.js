@@ -35,7 +35,7 @@ export default function PriceOffer() {
         carModel,
         city,
         zoomOption,
-        "reservationType": "priceOffering",
+        "reservationType": "price",
         "reservationStatus": "unassigned",
       });
       setAppInfo(app_info);;

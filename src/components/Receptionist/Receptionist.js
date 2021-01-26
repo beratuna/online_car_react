@@ -73,8 +73,8 @@ export default function Receptionist({token, setToken}) {
           { title: 'Surname', field: 'surname' },
           { title: 'Email', field: 'email' },
           { title: 'phone', field: 'phone' },
-          { title: 'Monthly Sales', field: 'monthlySales'},
-          { title: 'Total Sales', field: 'totalSales'}
+          { title: 'car Model', field: 'model'},
+          { title: 'Plate', field: 'plate'}
         ]}
       //   data={[{ name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 }]}
         data = {data}
