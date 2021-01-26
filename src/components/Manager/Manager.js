@@ -30,9 +30,7 @@ export default function Manager({token, setToken}) {
     for(let i = 0; i<man_info.length; i++){
       bigData.push(man_info[i]);
     }
-  setData(bigData);
-
-
+    setData(bigData);
   }
 
   return(
