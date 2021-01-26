@@ -27,7 +27,6 @@ export default function CarStatus() {
             condition: track_info[0].condition
         };
         setData([createRowData]);
-
     }
 
   return(

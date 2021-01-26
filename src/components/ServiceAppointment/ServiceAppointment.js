@@ -25,6 +25,8 @@ export default function ServiceAppointment() {
     const [faultWarning, setFaultWarning] = useState();
     const [accessoryAssembly, setAccessoryAssembly] = useState();
     const [appInfo, setAppInfo] = useState();
+    const [newTrackId, setNewTrackId] = useState();
+
     const handleSubmit = async e => {
       e.preventDefault();
       const app_info = await requestService({
@@ -43,14 +45,16 @@ export default function ServiceAppointment() {
         "reservationStatus": "unassigned",
       });
       setAppInfo(app_info);
-      console.log(appInfo);
+      console.log(app_info);
+      console.log(app_info.trackId);
+      setNewTrackId(app_info.trackId);
       
     }
     var today = new Date().toISOString().slice(0, 10)
   
     return(
       <div>
-        <h2>Service Appointment</h2>
+        <h2>Service Appointment </h2>
 
         <div id="root"></div>
         
@@ -150,8 +154,8 @@ export default function ServiceAppointment() {
 
           <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || date < today || !city || !carModel}>Submit</button>} modal>
             {appInfo == null && <span class="font-20">Appointment is creating. Please wait... </span>}
-            {appInfo == true && <span class="font-20 font-color-green">Appointment is created successfully.  &#10003;</span>}
-            {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>}
+            {appInfo != null && <span class="font-20 font-color-green">Appointment is created successfully. Yoour trackId is {newTrackId} &#10003;</span>}
+            {/* {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>} */}
           </Popup>
         </form>
       </div>
