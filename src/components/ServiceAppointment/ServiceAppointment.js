@@ -27,24 +27,27 @@ export default function ServiceAppointment() {
     const [appInfo, setAppInfo] = useState();
     const handleSubmit = async e => {
       e.preventDefault();
-      const app_info = await requestService({
-        name,
-        surname,
-        phone,
-        email,
-        plateNumber,
-        date,
-        city,
-        maintenance,
-        faultWarning,
-        accessoryAssembly,
-        carModel,
-        "reservationType": "service",
-        "reservationStatus": "unassigned",
-      });
-      setAppInfo(app_info);
+      try{
+        const app_info = await requestService({
+          name,
+          surname,
+          phone,
+          email,
+          plateNumber,
+          date,
+          city,
+          maintenance,
+          faultWarning,
+          accessoryAssembly,
+          carModel,
+          "reservationType": "service",
+          "reservationStatus": "unassigned",
+        });
+        setAppInfo(appInfo);
+      } catch(err){
+        setAppInfo(false);
+      }      
       console.log(appInfo);
-      
     }
     var today = new Date().toISOString().slice(0, 10)
   
@@ -149,8 +152,8 @@ export default function ServiceAppointment() {
 
 
           <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || date < today || !city || !carModel}>Submit</button>} modal>
-            {appInfo == null && <span class="font-20">Appointment is creating. Please wait... </span>}
-            {appInfo == true && <span class="font-20 font-color-green">Appointment is created successfully.  &#10003;</span>}
+            {appInfo == undefined || appInfo == null  && <span class="font-20">Appointment is creating. Please wait... </span>}
+            {appInfo && <span class="font-20 font-color-green">Appointment is created successfully.  &#10003;</span>}
             {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>}
           </Popup>
         </form>
