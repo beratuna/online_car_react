@@ -58,6 +58,18 @@ code {
 .m-l-5{ 
   margin-left: 5px;
 }
+
+.m-l-38{ 
+  margin-left: 38px;
+}
+
+.m-l-53{ 
+  margin-left: 53px;
+}
+.m-l-35{ 
+  margin-left: 48px;
+}
+
 .m-t-18{ 
   margin-top: -18px;
 }
@@ -89,7 +101,7 @@ code {
 }
 
 .theLabels{
-  width:30%;
+  width:40%;
 }
 .theInputs{
   width:78%;
@@ -134,4 +146,8 @@ code {
 
 .font-color-red {
   color: red;
+}
+
+.font-color-green {
+  color: green;
 }
