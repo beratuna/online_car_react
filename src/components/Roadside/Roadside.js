@@ -15,7 +15,7 @@ export default function Roadside() {
             Please call for assistance.
           </p>
           <p class="font-20">
-            Phone: 000000000
+            Phone: (0312) 378 38 38
           </p>
         </div>
         <div class="width-50">

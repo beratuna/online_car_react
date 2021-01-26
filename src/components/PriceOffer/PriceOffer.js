@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 async function requestPrice(info) {
  return axios.post(process.env.REACT_APP_backend_url + 'customer/requestPrice', {
     ...info
@@ -18,6 +21,7 @@ export default function PriceOffer() {
     const [carModel, setCarModel] = useState();
     const [city, setCity] = useState();
     const [zoomOption, setZoomOption] = useState();
+    const [appInfo, setAppInfo] = useState();
   
     const handleSubmit = async e => {
       e.preventDefault();
@@ -34,7 +38,7 @@ export default function PriceOffer() {
         "reservationType": "priceOffering",
         "reservationStatus": "unassigned",
       });
-      console.log(app_info);
+      setAppInfo(app_info);;
     }
   
     return(
@@ -74,8 +78,8 @@ export default function PriceOffer() {
             <label class="theLabels">
             <span  class="float-left">Price Interval: </span>
             <div class="theInputs">
-              <input type="number" class="m-r-10" placeholder="Min" onChange={e => setMinPrice(e.target.value)} />
-              <input type="number"  class="m-t-7" placeholder="Max" onChange={e => setMaxPrice(e.target.value)} />
+              <input type="number" class="m-r-10 width-100" placeholder="Min" onChange={e => setMinPrice(e.target.value)} />
+              <input type="number"  class="m-t-7 width-100" placeholder="Max" onChange={e => setMaxPrice(e.target.value)} />
               </div>
             </label>
           </div>
@@ -107,13 +111,15 @@ export default function PriceOffer() {
           <div class="column">
             <label class="theLabels">
             <span  class="float-left">Zoom option: </span>
-              <input class="theInputs m-t-7" type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
+              <input class="m-t-5 m-l-5 float-left" type="checkbox" onChange={e => setZoomOption(e.target.checked)} />
             </label>
           </div>
 
-          <div>
-            <button type="submit" class="btn btn-info btn-sm">Submit</button>
-          </div>
+          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !carModel || !city}>Submit</button>} modal>
+            {appInfo == null && <span>Offering request is creating. Please wait... </span>}
+            {appInfo == true && <span>Offering request is created successfully.</span>}
+            {appInfo == false && <span>Appointment cannot cretaed. Failed.</span>}
+          </Popup>
         </form>
       </div>
     )
