@@ -32,6 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
         <div>
           <h2 class="text-align: left">Online Car Sales and Services</h2> 
           <img src={logo} className="App-logo" alt="logo" />

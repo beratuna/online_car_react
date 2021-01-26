@@ -44,12 +44,15 @@ export default function Dashboard() {
         <div class="flex-container"> 
             <div class="width-50">
                 <img class="width-80" src={require('./cat.jpg')} />
+                <p class="font-20 m-t-7 font-luciad">Cat</p>
             </div>
             <div class="width-50 m-t-5">
                 <img class="width-90" src={require('./lion.jpg')} />
+                <p class="font-20 m-t-7 font-luciad">Lion</p>
             </div>
             <div class="width-50 m-t-6">
                  <img class="width-80" src={require('./elephant.png')} />
+                 <p class="font-20 m-t-7 font-luciad">Elephant</p>
             </div>
         </div>
     </div>
