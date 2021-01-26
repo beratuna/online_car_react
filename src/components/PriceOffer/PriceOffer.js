@@ -25,20 +25,24 @@ export default function PriceOffer() {
   
     const handleSubmit = async e => {
       e.preventDefault();
-      const app_info = await requestPrice({
-        name,
-        surname,
-        phone,
-        email,
-        minPrice,
-        maxPrice,
-        carModel,
-        city,
-        zoomOption,
-        "reservationType": "price",
-        "reservationStatus": "unassigned",
-      });
-      setAppInfo(app_info);;
+      try{
+	      const app_info = await requestPrice({
+	        name,
+	        surname,
+	        phone,
+	        email,
+	        minPrice,
+	        maxPrice,
+	        carModel,
+	        city,
+	        zoomOption,
+	        "reservationType": "price",
+	        "reservationStatus": "unassigned",
+	      });
+	      setAppInfo(app_info);
+      } catch(err){
+        setAppInfo(false);
+      }
     }
   
     return(
@@ -117,7 +121,7 @@ export default function PriceOffer() {
           </div>
 
           <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !carModel || !city || maxPrice <= minPrice}>Submit</button>} modal>
-            {appInfo == null && <span class="font-20">Offering request is creating. Please wait... </span>}
+            {appInfo == undefined || appInfo == null && <span class="font-20">Offering request is creating. Please wait... </span>}
             {appInfo == true && <span class="font-20 font-color-green">Offering request is created successfully. &#10003;</span>}
             {appInfo == false && <span class="font-20 font-color-red" >Appointment cannot cretaed. Failed.  &#215;</span>}
           </Popup>
