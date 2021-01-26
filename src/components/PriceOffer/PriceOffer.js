@@ -26,23 +26,23 @@ export default function PriceOffer() {
     const handleSubmit = async e => {
       e.preventDefault();
       try{
-        const app_info = await requestPrice({
-          name,
-          surname,
-          phone,
-          email,
-          minPrice,
-          maxPrice,
-          carModel,
-          city,
-          zoomOption,
-          "reservationType": "priceOffering",
-          "reservationStatus": "unassigned",
-        });
-        setAppInfo(app_info);;
+	      const app_info = await requestPrice({
+	        name,
+	        surname,
+	        phone,
+	        email,
+	        minPrice,
+	        maxPrice,
+	        carModel,
+	        city,
+	        zoomOption,
+	        "reservationType": "price",
+	        "reservationStatus": "unassigned",
+	      });
+	      setAppInfo(app_info);
       } catch(err){
         setAppInfo(false);
-      }   
+      }
     }
   
     return(
