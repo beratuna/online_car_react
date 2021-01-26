@@ -153,15 +153,9 @@ export default function ServiceAppointment() {
 
 
           <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || date < today || !city || !carModel}>Submit</button>} modal>
-<<<<<<< HEAD
             {appInfo == null && <span class="font-20">Appointment is creating. Please wait... </span>}
             {appInfo != null && <span class="font-20 font-color-green">Appointment is created successfully. Yoour trackId is {newTrackId} &#10003;</span>}
             {/* {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>} */}
-=======
-            {appInfo == undefined || appInfo == null  && <span class="font-20">Appointment is creating. Please wait... </span>}
-            {appInfo && <span class="font-20 font-color-green">Appointment is created successfully.  &#10003;</span>}
-            {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>}
->>>>>>> 96e9b369ad72bb05b7a3499956a8efef497a9af2
           </Popup>
         </form>
       </div>
