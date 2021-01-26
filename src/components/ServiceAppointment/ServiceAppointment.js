@@ -47,9 +47,6 @@ export default function ServiceAppointment() {
       
     }
     var today = new Date().toISOString().slice(0, 10)
-    if(date < today){
-      console.log("tadaaa");
-    }
   
     return(
       <div>
