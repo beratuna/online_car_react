@@ -52,7 +52,7 @@ export default function Login({ setToken }) {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Password: </span>
-              <input class="theInputs" type="text" required onChange={e => setPassword(e.target.value)} />
+              <input class="theInputs" type="password" required onChange={e => setPassword(e.target.value)} />
             </label>
           </div>
           <div class="column">
