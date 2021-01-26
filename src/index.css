@@ -107,7 +107,7 @@ code {
 .blink {
   animation: blinker 2.0s linear infinite;
   color: red;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   font-family: sans-serif;
   }
@@ -126,4 +126,8 @@ code {
 
 .font-luciad {
   font-family: "Lucida Handwriting";
+}
+
+.auto-height {
+  height: auto;
 }
