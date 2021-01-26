@@ -128,7 +128,7 @@ export default function ServiceAppointment() {
           <div class="column">
             <label class="theLabels">
             <span class="float-left">Maintenance: </span>
-              <input class="m-t-5 m-l-38  float-left" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
+              <input class="m-t-5 m-l-53  float-left" type="checkbox" onChange={e => setMaintenance(e.target.checked)} />
             </label>
           </div>
           
@@ -149,9 +149,9 @@ export default function ServiceAppointment() {
 
 
           <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !plateNumber || !date || date < today || !city || !carModel}>Submit</button>} modal>
-            {appInfo == null && <span>Appointment is creating. Please wait... </span>}
-            {appInfo == true && <span>Appointment is created successfully.</span>}
-            {appInfo == false && <span>Appointment cannot cretaed. Failed.</span>}
+            {appInfo == null && <span class="font-20">Appointment is creating. Please wait... </span>}
+            {appInfo == true && <span class="font-20 font-color-green">Appointment is created successfully.  &#10003;</span>}
+            {appInfo == false && <span class="font-20 font-color-red">Appointment cannot cretaed. Failed.  &#215;</span>}
           </Popup>
         </form>
       </div>

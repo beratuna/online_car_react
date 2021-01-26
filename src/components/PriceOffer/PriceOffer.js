@@ -80,6 +80,7 @@ export default function PriceOffer() {
             <div class="theInputs">
               <input type="number" class="m-r-10 width-100" placeholder="Min" onChange={e => setMinPrice(e.target.value)} />
               <input type="number"  class="m-t-7 width-100" placeholder="Max" onChange={e => setMaxPrice(e.target.value)} />
+              {maxPrice <= minPrice && <span class="font-color-red">Maximum price must be greater than minimum price.</span>}
               </div>
             </label>
           </div>
@@ -115,10 +116,10 @@ export default function PriceOffer() {
             </label>
           </div>
 
-          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !carModel || !city}>Submit</button>} modal>
-            {appInfo == null && <span>Offering request is creating. Please wait... </span>}
-            {appInfo == true && <span>Offering request is created successfully.</span>}
-            {appInfo == false && <span>Appointment cannot cretaed. Failed.</span>}
+          <Popup trigger={<button type="submit" class="btn btn-info btn-sm" disabled={!name || !surname || !phone || !email || !carModel || !city || maxPrice <= minPrice}>Submit</button>} modal>
+            {appInfo == null && <span class="font-20">Offering request is creating. Please wait... </span>}
+            {appInfo == true && <span class="font-20 font-color-green">Offering request is created successfully. &#10003;</span>}
+            {appInfo == false && <span class="font-20 font-color-red" >Appointment cannot cretaed. Failed.  &#215;</span>}
           </Popup>
         </form>
       </div>
