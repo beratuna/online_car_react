@@ -42,8 +42,12 @@ const App = () => {
       <BrowserRouter>
       <div class="flex-container justify-content-space-between flex-direction-row">
         <div>        
-          <Link to="/dashboard"><button class='btn btn-success'>
+          <Link to="/dashboard"><button class='btn btn-success home-button'>
               Home
+            </button>
+          </Link>
+          <Link to="/personnel"><button class='btn btn-success home-button'>
+              Personnel Home
             </button>
           </Link>
         </div>     
